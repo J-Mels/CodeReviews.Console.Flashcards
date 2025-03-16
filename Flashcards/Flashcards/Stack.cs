@@ -44,6 +44,9 @@ namespace Flashcards
         // ----------------------------------------------------- METHODS ----------------------------------------------------- //
         public void AddFlashcard(Flashcard flashcard)
         {
+            if (flashcard == null)
+                throw new ArgumentNullException("Error: Cannot set flashcard to a null value.");
+
             if (flashcard.StackId == StackId)
             {
                 _flashcards.Add(flashcard);
@@ -56,6 +59,9 @@ namespace Flashcards
 
         public void DeleteFlashcard(Flashcard flashcard)
         {
+            if (flashcard == null)
+                throw new ArgumentNullException("Error: Cannot set flashcard to a null value.");
+
             if (flashcard.StackId == StackId)
             {
                 _flashcards.Remove(flashcard);
